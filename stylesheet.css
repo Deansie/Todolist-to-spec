@@ -2,8 +2,13 @@
 /* Hänvisning till sidans statiska bakgrundsbild */
 
 body {
-    background-image: url(/images/background.jpg);  
+    background-color: ; 
+    background-image: linear-gradient(to top, rgb(252, 51, 51), rgb(247, 201, 198));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
+
 
 /* Lite finjustering av textvillkor för att underlätta för ögat att läsa texten */
 
@@ -13,55 +18,54 @@ p, h1, input, .completed, li{
     letter-spacing: 0.12em; 
 }
 
+h1 {
+    margin-bottom: -6%;
+}
+
 /* Villkor för mainDiv som bland annat gör sidan responsiv */
 
 .mainDiv {
-    background-color: rgb(165, 212, 228);
-    opacity: 85%;
+    background-color: white;
     text-align: center;
-    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: 2px solid;
     border-color: antiquewhite;
-    width: 50%;
+    width: 370px;
     margin: auto;
-    box-shadow: 10px 10px 8px 0px #f2dcc9;
+    box-shadow: -1px 1px 15px -8px rgb(87, 76, 76), 0px 1px 15px -8px rgb(87, 76, 76);
+    
     letter-spacing: 0.12em; 
-    margin-top: 10%;
+    margin-top: 1%;
 }
 
 /* För att avvika från centreringen av texten som blir av villkoren i .mainDiv, ger ett lite stabilare intryck */
 
 li {
-    text-align: left;
+    list-style: none;
+    margin-right: 15%;
 }
 
 /* Ger blå överstruken text på uppgifter på listan som blivit markerade som klara */
 
 .completed {
     text-decoration: line-through;
-    color: blue
+    color: grey;
   }
 
 /* Ökar bredden på inputfältet */ 
 
 input {
-    width: 80%;
+    width: 47%;
+    border-radius: 4%;
+    border-width: 1px;
 }
   
-
-.designSwitch {
-    display:inline-block;
-    
-    a {
-        text-decoration: underline;
-        color: blue;
-    }
-    
+button {
+    width:40px;
+    height: 31px;
 }
-
 
 
 
