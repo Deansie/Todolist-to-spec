@@ -1,0 +1,68 @@
+
+/* Hänvisning till sidans statiska bakgrundsbild */
+
+body {
+    background-image: url(/images/background.jpg);  
+}
+
+/* Lite finjustering av textvillkor för att underlätta för ögat att läsa texten */
+
+p, h1, input, .completed, li{
+    word-spacing: 0.16em;   
+    line-height: 2em;       
+    letter-spacing: 0.12em; 
+}
+
+/* Villkor för mainDiv som bland annat gör sidan responsiv */
+
+.mainDiv {
+    background-color: rgb(165, 212, 228);
+    opacity: 85%;
+    text-align: center;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid;
+    border-color: antiquewhite;
+    width: 50%;
+    margin: auto;
+    box-shadow: 10px 10px 8px 0px #f2dcc9;
+    letter-spacing: 0.12em; 
+    margin-top: 10%;
+}
+
+/* För att avvika från centreringen av texten som blir av villkoren i .mainDiv, ger ett lite stabilare intryck */
+
+li {
+    text-align: left;
+}
+
+/* Ger blå överstruken text på uppgifter på listan som blivit markerade som klara */
+
+.completed {
+    text-decoration: line-through;
+    color: blue
+  }
+
+/* Ökar bredden på inputfältet */ 
+
+input {
+    width: 80%;
+}
+  
+
+.designSwitch {
+    display:inline-block;
+    
+    a {
+        text-decoration: underline;
+        color: blue;
+    }
+    
+}
+
+
+
+
+
