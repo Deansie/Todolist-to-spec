@@ -6,25 +6,31 @@ body {
     background-image: linear-gradient(to top, rgb(252, 51, 51), rgb(247, 201, 198));
     background-repeat: no-repeat;
     background-attachment: fixed;
-
+    font-size: 110%;
 }
-
 
 /* Lite finjustering av textvillkor för att underlätta för ögat att läsa texten */
 
 p, h1, input, .completed, li{
     word-spacing: 0.16em;   
     line-height: 2em;       
-    letter-spacing: 0.12em; 
+    letter-spacing: 0.04em; 
 }
 
 h1 {
     margin-bottom: -6%;
+    margin-top: 0%; 
+    font-weight: 800;   
+}
+
+li {
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Villkor för mainDiv som bland annat gör sidan responsiv */
 
-.mainDiv {
+#mainDiv {
     background-color: white;
     text-align: center;
     display: flex;
@@ -35,10 +41,13 @@ h1 {
     width: 370px;
     margin: auto;
     box-shadow: -1px 1px 15px -8px rgb(87, 76, 76), 0px 1px 15px -8px rgb(87, 76, 76);
-    
     letter-spacing: 0.12em; 
     margin-top: 1%;
+    position: relative;
+    top: 0;
+    transition: opacity 1s;
 }
+
 
 /* För att avvika från centreringen av texten som blir av villkoren i .mainDiv, ger ett lite stabilare intryck */
 
@@ -51,7 +60,6 @@ li {
 
 .completed {
     text-decoration: line-through;
-    color: grey;
   }
 
 /* Ökar bredden på inputfältet */ 
@@ -62,11 +70,54 @@ input {
     border-width: 1px;
 }
   
-button {
+/* Stylar knapparna lite olika */
+
+#addText {
     width:40px;
     height: 31px;
+    background-color: rgb(231, 228, 228);
+    border-style: solid;
+    border-color: rgb(201, 197, 197);
+    color: black;
 }
 
+button {
+    background-color: white;
+    border-style: none;
+    color: rgba(168, 159, 159, 0.925);
+}
+
+/* ------------- Animationer ---------------*/
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .input-error {
+    color: red;
+    font-style: italic;
+    animation: blink 0.5s linear 2 forwards;
+  }
+
+@keyframes topDown {
+     0% { transform: translateY(0); }
+     50% { transform: translateY(250px); }
+    100% { transform: translateY(20px); }
+}
+
+#mainDiv.with-animation {
+    animation-name: topDown; 
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+
+
+ 
+  
 
 
 
