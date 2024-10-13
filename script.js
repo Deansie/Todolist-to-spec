@@ -9,6 +9,7 @@ label.innerText = `${completedCount} completed`;
 document.getElementById('mainDiv').classList.add('with-animation');
 
 
+
 // En eventlistener för att avlyssna klick på 'add'-knappen. Condition där om rutan är tom så returneras ett felmeddelande medans
 // om det finns text skriven så körs kodsnippet som skapar ett nytt element i våran todo-lista och listar detta i index.html
 // Finns även en funktion med en eventlistener som känner av om föremålen i listan trycks på så markeras den som klar och räknas upp i en count.
@@ -25,6 +26,8 @@ if (text !== "" && text !== "Input must not be empty") { // Felhantering för at
     listedItems.push(text);
     const item = document.createElement("li");
     list.appendChild(item);
+
+    item.classList.add ('item-animation');
 
     const itemLabel = document.createElement("span");
     itemLabel.innerText = text;
@@ -62,6 +65,13 @@ if (text !== "" && text !== "Input must not be empty") { // Felhantering för at
         });
 
     input.value = "";
+
+    function removeAnimation() {
+        item.classList.remove('item-animation');
+    }
+    
+    setTimeout(removeAnimation, 300);
+    
 
     } else {
             input.value = "Input must not be empty";

@@ -45,7 +45,8 @@ li {
     margin-top: 1%;
     position: relative;
     top: 0;
-    transition: opacity 1s;
+    opacity: 1;
+    transition: opacity 0.3s linear;
 }
 
 
@@ -102,17 +103,44 @@ button {
   }
 
 @keyframes topDown {
-     0% { transform: translateY(0); }
-     50% { transform: translateY(250px); }
-    100% { transform: translateY(20px); }
+     0% { transform: translateY(0px); }
+     50% { transform: translateY(55px); }
+    100% { transform: translateY(0px); }
 }
 
-#mainDiv.with-animation {
-    animation-name: topDown; 
-    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+@keyframes itemTopDown {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(15px); }
+   100% { transform: translateY(5px); }
+}
+
+#mainDiv.with-animation, #itemList.with-animation {
+    animation-name: topDown, fadeIn; 
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+}
+
+#mainDiv.fade-animation {
+    animation-name: fadeIn;
     animation-duration: 1s;
     animation-fill-mode: both;
 }
+
+.item-animation {
+    animation-name: itemTopDown;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+
+
 
 
 
